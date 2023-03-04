@@ -5,12 +5,12 @@ body {
   overflow-x: hidden;
 }
 
-.hi{
-    color: black;
-    font-size: 30px;
-    position: relative;
-    top:165px ;
-    left: 130px;
+.hi {
+  color: black;
+  font-size: 30px;
+  position: relative;
+  top: 165px;
+  left: 130px;
 }
 
 .box1 {
@@ -18,17 +18,24 @@ body {
   height: 150px;
   width: 150px;
   position: relative;
-  animation: box1 1s infinite ;
+}
+
+.container:hover {
+  cursor: pointer;
+}
+
+.container:hover .flex1 .box1 {
+  animation: box1 1s infinite;
   transform-origin: left top;
 }
 
-@keyframes box1{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(90deg);
-        }
+@keyframes box1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
 }
 
 .box2 {
@@ -36,21 +43,24 @@ body {
   height: 150px;
   width: 150px;
   position: relative;
-  animation: box2 1s infinite ;
+}
+
+.container:hover .flex1 .box2 {
+  animation: box2 1s infinite;
   transform-origin: right top;
 }
 
-@keyframes box2{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(-90deg);
-        }
+@keyframes box2 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-90deg);
+  }
 }
 
-.flex1{
-    display: flex;
+.flex1 {
+  display: flex;
 }
 
 .box3 {
@@ -58,17 +68,20 @@ body {
   height: 150px;
   width: 150px;
   position: relative;
-  animation: box3 1s infinite ;
+}
+
+.container:hover .flex2 .box3 {
+  animation: box3 1s infinite;
   transform-origin: left bottom;
 }
 
-@keyframes box3{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(-90deg);
-        }
+@keyframes box3 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-90deg);
+  }
 }
 
 .box4 {
@@ -76,20 +89,22 @@ body {
   height: 150px;
   width: 150px;
   position: relative;
-  animation: box4 1s infinite ;
+}
+
+.container:hover .flex2 .box4 {
+  animation: box4 1s infinite;
   transform-origin: right bottom;
 }
 
-@keyframes box4{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(90deg);
-        }
+@keyframes box4 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
 }
 
-
-.flex2{
-    display: flex;
+.flex2 {
+  display: flex;
 }
