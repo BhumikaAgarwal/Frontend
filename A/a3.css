@@ -1,0 +1,95 @@
+body {
+  background-color: white;
+  margin-left: 200px;
+  margin-top: 50px;
+  overflow-x: hidden;
+}
+
+.hi{
+    color: black;
+    font-size: 30px;
+    position: relative;
+    top:165px ;
+    left: 130px;
+}
+
+.box1 {
+  background-color: red;
+  height: 150px;
+  width: 150px;
+  position: relative;
+  animation: box1 1s infinite ;
+  transform-origin: left top;
+}
+
+@keyframes box1{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(90deg);
+        }
+}
+
+.box2 {
+  background-color: yellow;
+  height: 150px;
+  width: 150px;
+  position: relative;
+  animation: box2 1s infinite ;
+  transform-origin: right top;
+}
+
+@keyframes box2{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-90deg);
+        }
+}
+
+.flex1{
+    display: flex;
+}
+
+.box3 {
+  background-color: blue;
+  height: 150px;
+  width: 150px;
+  position: relative;
+  animation: box3 1s infinite ;
+  transform-origin: left bottom;
+}
+
+@keyframes box3{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-90deg);
+        }
+}
+
+.box4 {
+  background-color: green;
+  height: 150px;
+  width: 150px;
+  position: relative;
+  animation: box4 1s infinite ;
+  transform-origin: right bottom;
+}
+
+@keyframes box4{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(90deg);
+        }
+}
+
+
+.flex2{
+    display: flex;
+}
