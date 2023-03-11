@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="this is for keywords">
+    <title>b1</title>
+    <link rel="stylesheet" href="b1.css">
+</head>
+
+<body>
+    <div>
+        <label for="github-handle">Enter Github handle:</label>
+        <input type="text" id="username">
+        <button id="btn">Fetch</button>
+    </div>
+
+    <div>
+        <h2 id="name"></h2>
+        <img src="" alt="" id="avatar" style="height: 200px;">
+        <p id="description"></p>
+    </div>
+
+</body>
+
+<script>
+
+    const btn1 = document.getElementById('btn');
+    const gitInput = document.getElementById('username');
+
+    btn1.addEventListener('click', () => {
+        const githubHandle = gitInput.value;
+
+        const name1 = document.getElementById('name');
+        const avatar1 = document.getElementById('avatar');
+        const descr = document.getElementById('description');
+
+        fetch(`https://api.github.com/users/${githubHandle}`)
+            .then(response => response.json())
+            .then(data => {
+                name1.textContent = data.name;
+                avatar1.src = data.avatar_url;
+                descr.textContent = data.bio;
+            })
+            .catch(error => {
+                console.error(error);
+                name1.textContent = '';
+                avatar1.src = '';
+                descr.textContent = 'Sorry! An error occured';
+            });
+    });
+
+</script>
