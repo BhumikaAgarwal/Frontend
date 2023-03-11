@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="this is for keywords">
+    <title>b1</title>
+</head>
+
+<body>
+    <div class="optionlist">
+        <input type="checkbox" name="one"><label>option1</label>
+        <input type="checkbox" name="two"><label>option2</label>
+        <input type="checkbox" name="three"><label>option3</label>
+        <input type="checkbox" name="four"><label>option4</label>
+        <input type="checkbox" name="five"><label>option5</label>
+    </div>
+</body>
+
+<script>
+    let checkboxes = document.querySelectorAll('.optionlist input[type="checkbox"]');
+    let lastChecked;
+
+    function logic(e) {
+        let inBetween = false;
+        if (e.shiftKey) {
+            checkboxes.forEach(checkbox => {
+                if (checkbox === this || checkbox === lastChecked) {
+                    inBetween = !inBetween;
+                }
+                if (inBetween) checkbox.checked = true;
+
+            })
+        }
+        lastChecked = this;
+    }
+
+    checkboxes.forEach((checkbox, i) => checkbox.addEventListener('click', logic));
+</script>
