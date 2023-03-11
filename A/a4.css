@@ -1,8 +1,34 @@
-body{
-    background-color:black;
+body {
+    background-color: black;
 }
 
-.menubar1{
+.menu:hover{
+    cursor: pointer;
+}
+
+.menu:hover .menubar1{
+    animation: a1 1s linear  0.4s;
+    transform-origin: 100%;
+    animation-fill-mode: forwards;
+}
+
+.menu:hover .menubar3{
+    animation: a3 1s linear  0.4s;
+    transform-origin: 100%;
+    animation-fill-mode: forwards;
+}
+
+.menu:hover .menubar2{
+    animation: a2 0.5s linear  0.4s;
+    transform-origin: 100%;
+    animation-fill-mode: forwards;
+}
+
+.menu{
+    position: relative;
+}
+
+.menubar1 {
     display: block;
     width: 300px;
     height: 7px;
@@ -11,22 +37,25 @@ body{
     align-items: center;
     margin-top: 170px;
     margin-left: 400px;
-    animation: a1 0.8s linear infinite;
-    transform-origin: center;
-}
+    }
 
-@keyframes a1{
-    0%{
+@keyframes a1 {
+    0% {
         transform: rotate(0deg);
     }
 
-    100%{
-        transform: rotate(-35deg) translate(0px, 95px);
+    50%{
+        background-color: white;
+    }
+
+    100% {
+        transform: rotate(-45deg) translateY(-40px);
+        background-color: white;
     }
 }
 
 
-.menubar2{
+.menubar2 {
     display: block;
     width: 300px;
     height: 7px;
@@ -34,15 +63,25 @@ body{
     align-items: center;
     margin-top: 70px;
     margin-left: 400px;
-    animation: a2 2s linear infinite;
 }
 
-@keyframes a2{
-    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+@keyframes a2 {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50%{
+        background-color: white;
+    }
+
+    100% {
+        transform: translateX(150px);
+        opacity: 0;
+        background-color: white;
+    }
 }
 
-.menubar3{
+.menubar3 {
     display: block;
     width: 300px;
     height: 7px;
@@ -51,17 +90,101 @@ body{
     align-items: center;
     margin-top: 70px;
     margin-left: 400px;
-    animation: a3 0.8s linear infinite;
-    transform-origin: center;
-}
+    }
 
-@keyframes a3{
-    0%{
+@keyframes a3 {
+    0% {
         transform: rotate(0deg);
     }
 
-    100%{
-           transform: rotate(35deg) translate(0px, -95px);
+    50%{
+        background-color: white;
+    }
+
+    100% {
+        transform: rotate(45deg) translateY(40px) ;
+        background-color: white;
 
     }
+
+    
 }
+
+
+#container {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+     border: solid red 1px;
+  }
+  
+  #halfclip {
+      width: 50%;
+      height: 100%;
+      right: 0px;
+      position: absolute;
+      overflow: hidden;
+      transform-origin: left center;
+  }
+  
+  #container:hover #halfclip {
+      animation: cliprotate 6s 1;
+      transform: rotate(180deg);
+  } 
+  
+  @keyframes cliprotate {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(0deg);}
+    50.01% {transform: rotate(180deg);}
+    100% {transform: rotate(180deg);}
+  }
+  
+  .halfcircle {
+    box-sizing: border-box;
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    border: solid 25px transparent;
+     border-top-color: blue;
+     border-left-color: blue;
+     border-radius: 50%;
+  }
+  
+  #clipped {
+      width: 200%;
+      transform: rotate(-45deg);
+  }
+  #container:hover #clipped {
+      transform: rotate(135deg);
+      animation: rotate 3s linear 2;
+  }
+  
+  
+  @keyframes rotate {
+    0% {transform: rotate(-45deg);}
+    100% {transform: rotate(135deg);}
+  }
+  
+  
+  #fixed {
+    width: 100%;
+      transform: rotate(135deg);  
+      opacity: 0;
+  }
+  
+  #container:hover #fixed {
+      opacity: 1;
+      animation: showfixed 6s 1;
+  }
+  
+  
+  
+  @keyframes showfixed {
+    0% {opacity: 0;}
+    49.99% {opacity: 0;}
+    50% {opacity: 1;}
+   100% {opacity: 1;}
+  }
+  
+
+
