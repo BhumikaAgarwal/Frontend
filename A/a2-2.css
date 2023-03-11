@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+}
+
+.box-2 {
+    perspective: 300px;
+    transform-style: preserve-3d;
+    padding-top: 200px;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    transform: rotateX(-40deg);
+}
+
+.box2-front {
+    position: absolute;
+    background-color: green;
+    border: white solid 1px;
+    width: 20%;
+    height: 100px;
+}
+
+.box2-right {
+    position: absolute;
+    background-color: green;
+    border: white solid 1px;
+    width: 20%;
+    height: 100px;
+    transform: rotateY(-110deg);
+    transform-origin: right;
+}
+
+.box2-left {
+    position: absolute;
+    background-color: green;
+    border: white solid 1px;
+    width: 20%;
+    height: 100px;
+    transform: rotateY(80deg);
+    transform-origin: left;
+}
+
+.box2-back{
+    position: absolute;
+    background-color: green;
+    border: white solid 1px;
+    width: 24%;
+    height: 100px;
+    transform: translateZ(-101px) translateX(16px);
+}
+
+.box2-bottom{
+    position: absolute;
+    background-color: green;
+    border: white solid 1px;
+    width: 20%;
+    height: 100px;
+    transform: rotateX(100deg) translateY(-50px) translateZ(-48px) translateX(5px);
+}
+
+.box-2:hover{
+    cursor: pointer;
+}
+
+.box-2:hover .box2-right{
+    transform: rotateY(180deg);
+}
+
+.box-2:hover .box2-left{
+    transform: rotateY(-180deg);
+
+}
+
+.box-2:hover .box2-back{
+    transform: translateZ(0px) translateY(-100px);
+    width: 20%;
+
+}
+
+.box-2:hover .box2-bottom{
+    transform: rotateX(0deg) translateY(100px);
+
+}

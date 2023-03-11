@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    justify-content: space-around;
+    background-color: blue;
+}
+
+.box-1 {
+    padding-top: 200px;
+    display: flex;
+    width: 200px;
+    height: 75px;
+    perspective: 300px;
+}
+
+.box-1:hover{
+    cursor: pointer;
+}
+
+.box-1>div:first-child {
+    width: 60%;
+    background: linear-gradient(to right, green, rgb(4, 194, 4));
+    transform: rotateY(-30deg);
+    transform-origin: right;
+}
+
+.box-1>div:last-child {
+    width: 40%;
+    background:linear-gradient(to right,rgb(2, 198, 2),green);
+    transform-origin: left;
+    transform: rotateY(30deg);
+    border-left: solid white;
+}
+
+.box-1:hover>div:last-child {
+    transform: rotateY(90deg) rotateZ(15deg);
+    transition: all ease 0.5s;
+}
+
+.box-1:hover>div:first-child{
+    transform: rotateY(0deg);
+    transition: all ease 0.5s;
+    transform-origin: right;
+
+}
